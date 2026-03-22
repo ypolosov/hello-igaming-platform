@@ -1,10 +1,8 @@
-version: '3.9'
-
 services:
   api-gateway:
     build:
-      context: ./packages/api-gateway
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: packages/api-gateway/Dockerfile
     ports:
       - "3000:3000"
     environment:
@@ -18,21 +16,21 @@ services:
 
   tenant-service:
     build:
-      context: ./packages/tenant-service
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: packages/tenant-service/Dockerfile
     ports:
       - "3001:3001"
 
   player-service:
     build:
-      context: ./packages/player-service
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: packages/player-service/Dockerfile
     ports:
       - "3002:3002"
 
   game-service:
     build:
-      context: ./packages/game-service
-      dockerfile: Dockerfile
+      context: .
+      dockerfile: packages/game-service/Dockerfile
     ports:
       - "3003:3003"
