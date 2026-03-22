@@ -91,6 +91,14 @@ it('returns 400 when X-Tenant-Id missing on protected routes', async () => {
 });
 ```
 
+## Fitness Function
+
+**File:** `tests/fitness/adr-002-tenant-isolation.test.ts`
+**Gate:** pre-commit hook (`.git/hooks/pre-commit`)
+
+Проверяет: все protected routes (`/api/players`, `/api/games`, `/api/tenants`) возвращают 400 при отсутствии `X-Tenant-Id`.
+`/health` остаётся доступным без заголовка.
+
 ## Rejected
 
 - A2 (path prefix): нарушает REST семантику

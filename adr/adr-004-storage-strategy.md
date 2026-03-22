@@ -72,6 +72,14 @@ npm test  # все сервисы: no DB connection required, все green
 // import { Pool } from 'pg'; ← отсутствие этого import = fitness check пройден
 ```
 
+## Fitness Function (updated)
+
+**File:** `tests/fitness/adr-004-no-external-db.test.ts`
+**Gate:** pre-commit hook (`.git/hooks/pre-commit`)
+
+Сканирует все `packages/*/src/*.ts` файлы и проверяет отсутствие импортов:
+`pg`, `mysql`, `mysql2`, `mongodb`, `mongoose`, `@prisma/client`, `drizzle-orm`, `better-sqlite3`, `knex`.
+
 ## Rejected
 
 - A2 (SQLite): нет явного выигрыша перед in-memory для demo; добавляет migration complexity
